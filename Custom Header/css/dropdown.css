@@ -1,6 +1,6 @@
 .hoverDrop {
-	position: relative;
-	display: inline;
+	position: relative !important;
+	display: inline !important;
 }
 
 .hoverDrop-content {
