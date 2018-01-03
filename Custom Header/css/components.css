@@ -950,9 +950,8 @@ textarea.w-select {
 	white-space: nowrap;
 }
 .w-dropdown-link:hover {
-	color: ##ceb3aa!important;
-	
-}
+	color: #ceb3aa;
+	}
 .w-dropdown-toggle {
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -1501,8 +1500,7 @@ textarea.w-select {
 }
 
 .w-nav-link:hover {
-	color: ##ceb3aa;
-	
+	color: #ceb3aa;
 }
 .w-nav-link.w--current {
 	color: #0082f3;
