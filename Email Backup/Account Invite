@@ -1,0 +1,255 @@
+{% capture email_title %} ACTIVATE YOUR ACCOUNT {% endcapture %}
+{% capture email_body %}Welcome to 6 Shore Road please verify your e-mail address to become an insider. {% endcapture %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+
+  <style>
+
+
+
+
+    .button__cell { background: {{ shop.email_accent_color }}; }
+    a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+
+    p,span {
+     font-size: 11px;
+     font-weight: bold;
+
+   }
+
+
+   .lines{
+    line-height:100%;
+   }
+
+
+
+    .aligncent{
+      text-align: center;
+   }
+
+
+   .linkinfo{
+   text-decoration: underline;
+   color: blue;
+   margin-top: 2px!important;
+   }
+
+   .nomargin{
+   margin-top: 2px!important;
+    }
+   .paddtd {
+     padding-left: 13%;
+  }
+
+  .nopad{
+     padding-bottom: 120px;
+     top: 0px;
+   }
+
+  .totals{
+   font-size: 12px;
+
+   }
+
+  .marg{
+    padding-top: 7px!important;
+  }
+
+  .alignright{
+    text-align: right;
+   }
+   .nonopad{
+    padding-bottom: 10px;
+  }
+  .borders{
+      border-top: 2px solid #ceb3aa;
+      border-bottom: 2px solid #ceb3aa;
+       margin-top: 30px;
+       margin-bottom: 10px;
+       width: 100%;
+      text-align: right;
+    }
+  .items{
+       font-size: 13px;
+       font-weight: 640;
+
+  }
+ .norad{
+       border-radius: no;
+  }
+
+   .botpadd{
+     padding-bottom:  91px;
+  }
+  </style>
+</head>
+
+  <body>
+<div class="container">
+
+    <table class="body">
+      <tr>
+        <td style="text-align: center;">
+          <table style="margin-bottom:0px;" class="header row">
+  <tr>
+    <td class="header__cell">
+      <center>
+
+        <table class="container">
+          <tr>
+            <td>
+
+              <table class="row">
+                <tr>
+                  <td style="text-align: center;" class="shop-name__cell">
+                    {%- if shop.email_logo_url %}
+                      <img src="{{shop.email_logo_url}}" alt="{{ shop.name }}" width="{{ shop.email_logo_width }}">
+                    {%- else %}
+                      <h1 class="shop-name__text">
+                        <a href="{{shop.url}}">{{ shop.name }}</a>
+                      </h1>
+                    {%- endif %}
+                  </td>
+
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </table>
+
+      </center>
+    </td>
+  </tr>
+</table>
+
+
+          <table style="text-align: center;" class="row content" >
+  <tr>
+    <td class="content__cell" style="padding-bottom: 0px;">
+      <center>
+        <table style=" width:100%;" class="container">
+          <tr>
+            <td>
+             <table class="button main-action-cell" style="border:0; width:100%; margin-bottom: 22px;">
+                <td class="button__cell" style="text-align: center; border:0; border-radius:0;     background-color: white;
+">
+            <a href="{{ customer.account_activation_url }}" class="button__text" style="font-size: 24px; font-weight: 200; letter-spacing:0.1em; padding-top: 20px; padding-bottom: 20px; color: white; background-color: #ceb3aa;">{{ email_title }}</a>
+              </td>
+             </table>
+
+
+
+              <table style="text-align:center;" class="row actions">
+  <tr style="text-align:center;">
+    <td style="text-align:center;" class="actions__cell">
+      <table style="text-align:center;" class="container">
+        <tr style="text-align:center;">
+                  <td style="text-align:center;">
+              {% if custom_message != blank %}
+           <p style="font-size: 11px; font-weight:bold; font-family: sans-serif;"> {{custom_message}} </p>
+            {% else %}
+               <p style="font-size: 11px; font-weight:bold; font-family: sans-serif;"> {{email_body}} </p>
+            {% endif %}
+
+        </td>
+        </tr>
+      </table>
+
+      {% if shop.url %}
+    <table class="link secondary-action-cell">
+      <tr>
+
+      </tr>
+    </table>
+{% endif %}
+
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+
+
+
+          <table style="border:none;" class="row footer">
+  <tr>
+    <td class="footer__cell">
+      <center>
+        <table class="container">
+
+
+
+
+         <tr class="aligncent">
+            <td>
+              <p >Follow us on social media #BEACHTOBAR</p>
+            </td>
+          </tr>
+
+           <tr class="aligncent">
+            <td>
+              <p style="margin-bottom:-10px;" >6 Shore Road | <a
+    style="text-decoration: underline; font-size: 11px; color:#ceb3aa;      "
+  href="mailto:customerservice@6shoreroad.com">customerservice@6shoreroad.com</a></p>
+              <span style="margin-bottom:6px;">Call us at <span style="text-decoration:underline; color:blue;">(855) 674-6730</span></span>
+            </td>
+          </tr>
+
+
+
+         <tr class="aligncent">
+            <td>
+             <p style="margin-bottom:-10px; margin-top:6px;" class="lines"><i> To ensure that your newsletters are not delivered to your junk or bulk folders please add <a
+    style="text-decoration: underline; font-size: 11px; color:#ceb3aa;      "
+  href="mailto:customerservice@6shoreroad.com">customerservice@6shoreroad.com</a> to your address book.</i></p>
+            </td>
+          </tr>
+
+
+
+
+
+
+
+
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<img src="{{ 'notifications/spacer.png' | shopify_asset_url }}" class="spacer" height="1" />
+
+        </td>
+      </tr>
+    </table>
+
+
+
+
+
+</div>
+
+  </body>
+</html>

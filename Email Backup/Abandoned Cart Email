@@ -1,0 +1,510 @@
+{% capture email_title %}Welcome Back{% endcapture %}
+{% capture email_body %}
+We hate to see you leave, shop all your vacation needs.
+{% endcapture %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+
+  <style>
+.button__text {background-color: #ceb3aa!important; }
+
+    .button__cell { margin-bottom: 20px; display: block;width: 200px;margin-left: auto;margin-right:  auto;text-align: center; background: {{ shop.email_accent_color }}; }
+
+
+    p,span {
+     font-size: 11px;
+     font-weight: bold;
+
+   }
+
+
+   .lines{
+    line-height:100%;
+   }
+
+
+
+    .aligncent{
+      text-align: center;
+   }
+
+
+   .linkinfo{
+   text-decoration: underline;
+   color: blue;
+   margin-top: 2px!important;
+   }
+
+   .nomargin{
+   margin-top: 2px!important;
+    }
+   .paddtd {
+     padding-left: 13%;
+  }
+
+  .nopad{
+     padding-bottom: 120px;
+     top: 0px;
+   }
+
+  .totals{
+   font-size: 12px;
+
+   }
+
+  .marg{
+    padding-top: 7px!important;
+  }
+
+  .alignright{
+    text-align: right;
+   }
+   .nonopad{
+    padding-bottom: 10px;
+  }
+  .borders{
+      border-top: 2px solid #ceb3aa;
+      border-bottom: 2px solid #ceb3aa;
+       margin-top: 30px;
+       margin-bottom: 10px;
+       width: 100%;
+      text-align: right;
+    }
+  .items{
+       font-size: 13px;
+       font-weight: 640;
+       color: #ceb3aa;
+  }
+ .norad{
+       border-radius: no;
+  }
+
+   .botpadd{
+     padding-bottom:  91px;
+  }
+  </style>
+</head>
+
+  <body>
+
+  <div style="800px;" class="container" >
+    <table class="body">
+      <tr>
+        <td>
+          <table style="margin-bottom:0px;" class="header row">
+  <tr>
+    <td class="header__cell">
+      <center>
+
+        <table class="container">
+          <tr>
+            <td>
+
+              <table class="row">
+                <tr>
+                  <td style="text-align: center;" class="shop-name__cell">
+                    {%- if shop.email_logo_url %}
+                      <img src="{{shop.email_logo_url}}" alt="{{ shop.name }}" width="{{ shop.email_logo_width }}">
+                    {%- else %}
+                      <h1 class="shop-name__text">
+                        <a href="{{shop.url}}">{{ shop.name }}</a>
+                      </h1>
+                    {%- endif %}
+                  </td>
+
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </table>
+
+      </center>
+    </td>
+  </tr>
+</table>
+
+
+          <table style="text-align:center;" class="row content">
+
+
+      <center>
+       <tr style="text-align:center;">
+        <table style=" width:100%; text-align:center;" class="container">
+
+
+              <td style="text-align: center; width:100%;">
+            <h2 style="font-weight: 200; letter-spacing:0.1em; padding-top: 20px; padding-bottom: 20px; color: white; background-color: #ceb3aa;">{{ email_title }}</h2>
+              </td>
+<h4 style="margin-top:25px;text-align:center"> We reserved these items for you, get them now before they're gone. </h4>
+            </tr>
+
+  <tr style="text-align:center;">
+
+            {% if order_status_url %}
+              <table style="text-align: center;" class="row actions">
+
+    <td style="text-align: center;" class="actions__cell">
+      <table style="width: 100%; text-align: center;"class="container">
+
+                  <td style="text-align: center;">
+         <p style="font-size: 11px; font-weight:bold; font-family: sans-serif;"> {{custom_message}} </p>
+        </td>
+
+      </table>
+
+      {% if shop.url %}
+    <table class="link secondary-action-cell">
+
+    </table>
+{% endif %}
+
+    </td>
+
+</table>
+
+            {% else %}
+              {% if shop.url %}
+    <table class="row actions">
+
+        <td class="actions__cell">
+          <table class="button main-action-cell">
+
+              <td  bgcolor="#ceb3aa" class="button__cell"><a href="{{ invoice.url }}" class="button__text">Checkout Now</a></td>
+
+          </table>
+        </td>
+
+    </table>
+{% endif %}
+
+            {% endif %}
+
+            </td>
+
+        </table>
+       </tr>
+      </center>
+
+
+</table>
+
+          <table style="background-color: #f1f1f1;     padding-top: 20px!important;" class="row section">
+  <tr>
+    <td style="padding-top: 20px!important;" class="section__cell">
+      <center>
+        <table class="container">
+          <tr>
+            <td style="text-align: center;">
+              <h3 style="font-size:14px; font-weight:bold; margin-bottom:10px!important;">ORDER NUMBER: {{ order_name }}</h3>
+              <p style="font-weight:bold; font-size:11px; margin-bottom: 20px;">Abandoned on  {{ date | date: "%B %d,%Y %I:%M:%S %p %Z" }}</p>
+            </td>
+          </tr>
+        </table>
+
+        <table  class="container">
+          <tr>
+            <td>
+
+            <table class="row">
+              <tr>
+
+                {% if requires_shipping and shipping_address %}
+                <td class="customer-info__item paddtd">
+                  <h4 style="font-size:14px; font-weight:bold; margin-bottom:10px!important;">SHIP TO:</h4>
+              <p> {{ shipping_address.name  }} </p>
+              <p class="linkinfo"> {{ shipping_address.street }} </p>
+              <p class="linkinfo"> {{ shipping_address.city }},{{shipping_address.province }},{{shipping_address.province_code }} </p>
+              <p class="linkinfo"> {{ shipping_address.country }} </p>
+               <span>T: </span><span class="linkinfo">{{shipping_address.phone }}</span>
+
+                </td>
+                {% endif %}
+
+              </tr>
+            </table>
+
+
+            </td>
+          </tr>
+        </table>
+
+      </center>
+    </td>
+  </tr>
+</table>
+
+
+
+<table class="container borders">
+
+</table>
+
+
+
+<hr>
+<hr>
+
+
+
+
+
+<div style="width:100%;" class="container">
+
+
+  {% for line in line_items %}
+
+       <div style="display:flex;" class="row">
+        <div  style="display:inline-block; width:30%; float:left;"   >
+          {% if line.image %}
+            <img src="{{ line | img_url: '1000x1200' }}" align="left" width="100" height="150" />
+          {% endif %}
+        </div>
+        <div  style="display:inline-block; width:30%;" >
+          {% if line.product.title %}
+            {% assign line_title = line.product.title %}
+          {% else %}
+            {% assign line_title = line.title %}
+          {% endif %}
+
+
+          <p class="items">ITEM</p>
+          <p style=" font-weight:bold; text-transform: uppercase;" >{{ line_title }}  </p>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+<div  style="display:inline-block; width:20%;">
+            <p class="items">SKU</p>
+            {% if line.line_item.sku != "" %} <p>{{line.sku}}</p> {%endif%}
+          </div>
+
+
+            <div style="display:inline-block; width:20%;" >
+                <p class="items">QTY</p>
+               {% if line.quantity < line.quantity %}
+            {% capture line_display %} {{ line.quantity }} of {{ line.quantity }} {% endcapture %}
+          {% else %}
+            {% assign line_display = line.quantity  %}
+          {% endif %}
+          <p> {{ line_display }} </p>
+            </div>
+
+
+
+          <div style="display:inline-block; width:20%; float:right; text-align:right;" >
+
+<p class="items">SUBTOTAL</p>
+            {% if line.original_line_price != line.line_price %}
+             <div style="margin-top:10px;"> <del style="font-size:11px; ">{{ line.original_line_price | money }}</del></div>
+            {% endif %}
+            <p style="  font-weight:bold;" >{{ line.line_price | money }}</p>
+          </div>
+</div>
+<hr>
+  {% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+            <table style="margin-top:0px; border-top:none;" class="row subtotal-lines">
+  <tr>
+    <td style="width: 55%;" class="subtotal-spacer"></td>
+    <td>
+      <table class="row subtotal-table">
+
+
+
+
+
+<tr class="subtotal-line">
+  <td  class="subtotal-line__title alignright marg">
+    <p>
+      <span class="totals">Subtotal</span>
+    </p>
+  </td>
+  <td style="padding-top: -25px;" class="subtotal-line__value">
+    <strong class="totals">{{ subtotal_price | money }}</strong>
+  </td>
+</tr>
+
+
+<tr class="subtotal-line ">
+  <td   class="subtotal-line__title alignright marg">
+    <p>
+      <span class="totals">Shipping & Handling</span>
+    </p>
+  </td>
+  <td style="padding-top: -25px;"class="subtotal-line__value ">
+    <strong class="totals">{{ shipping_price | money }}</strong>
+  </td>
+</tr>
+
+<tr class="subtotal-line ">
+  <td   class="subtotal-line__title alignright marg">
+    <p>
+      <span class="totals">Discount (beachtobar)</span>
+    </p>
+  </td>
+  <td style="padding-top: -25px;"class="subtotal-line__value ">
+    {% if discounts %}
+    {% assign disc = discount.total_amount  %}
+    <strong class="totals">{{ disc | money }}</strong>
+   {% else %}
+    {% assign disc = '$0.00' %}
+   <strong class="totals">{{ disc }}</strong>
+   {% endif %}
+  </td>
+</tr>
+
+
+
+
+<tr class="subtotal-line ">
+  <td  class="subtotal-line__title alignright marg">
+    <p>
+      <span class="totals">Grand Total (Excl. Tax)</span>
+    </p>
+  </td>
+  <td style="padding-top: -25px;"class="subtotal-line__value ">
+    <strong class="totals">{{ subtotal_price | plus: disc | plus: shipping_price  | money }}</strong>
+  </td>
+</tr>
+
+<tr class="subtotal-line ">
+  <td   class="subtotal-line__title alignright marg">
+    <p>
+      <span class="totals">Tax</span>
+    </p>
+  </td>
+  <td style="padding-top: -25px;"class="subtotal-line__value ">
+      {% if tax_line.price>0 %}
+    {% assign tax = tax_line.price %}
+    <strong class="totals">{{ tax | money }}</strong>
+   {% else %}
+    {% assign tax = '$0.00' %}
+   <strong class="totals">{{ tax }}</strong>
+   {% endif %}
+  </td>
+</tr>
+
+
+<tr class="subtotal-line ">
+  <td   class="subtotal-line__title alignright marg">
+    <p>
+      <span class="totals">Grand Total (Incl. Tax)</span>
+    </p>
+  </td>
+  <td style="padding-top: -25px;"class="subtotal-line__value ">
+    <strong class="totals">{{ subtotal_price | plus: disc | plus: shipping_price | plus: tax  | money }}</strong>
+  </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+        </table>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+          <table style="border:none;" class="row footer">
+  <tr>
+    <td class="footer__cell">
+      <center>
+        <table class="container">
+
+
+
+
+         <tr class="aligncent">
+            <td>
+              <p >Follow us on social media #BEACHTOBAR</p>
+            </td>
+          </tr>
+
+           <tr class="aligncent">
+            <td>
+              <p style="margin-bottom:-10px;" >6 Shore Road | <a
+    style="text-decoration: underline; font-size: 11px; color:#ceb3aa;      "
+  href="mailto:customerservice@6shoreroad.com">customerservice@6shoreroad.com</a></p>
+              <span style="margin-bottom:6px;">Call us at <span style="text-decoration:underline; color:blue;">(855) 674-6730</span></span>
+            </td>
+          </tr>
+
+
+
+         <tr class="aligncent">
+            <td>
+             <p style="margin-bottom:-10px; margin-top:6px;" class="lines"><i> To ensure that your newsletters are not delivered to your junk or bulk folders please add <a
+    style="text-decoration: underline; font-size: 11px; color:#ceb3aa;      "
+  href="mailto:customerservice@6shoreroad.com">customerservice@6shoreroad.com</a> to your address book.</i></p>
+            </td>
+          </tr>
+
+
+
+
+
+
+
+
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>
+
+<img src="{{ 'notifications/spacer.png' | shopify_asset_url }}" class="spacer" height="1" />
+
+        </td>
+      </tr>
+    </table>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  </body>
+</html>
