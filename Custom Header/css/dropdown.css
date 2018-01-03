@@ -1,5 +1,5 @@
 /* Dropdown Button */
-.dropbtn {
+.dropbtnHover {
 	background-color: transparent;
 	color: white;
 	padding: 16px;
@@ -41,6 +41,6 @@
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdownHover:hover .dropbtn {
+.dropdownHover:hover .dropbtnHover {
 	background-color: transparent;
 }
