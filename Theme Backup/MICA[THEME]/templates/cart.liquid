@@ -1,0 +1,10 @@
+<script>
+  fbq('track', 'InitiateCheckout', {
+    value: {{product.price | money_without_currency }},
+    currency: 'USD',
+  });
+</script>
+
+
+
+{% section 'cart-template' %}

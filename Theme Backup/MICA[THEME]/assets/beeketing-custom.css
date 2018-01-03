@@ -1,0 +1,21 @@
+.bsales_default  .bsales-v-offer #bsales-wrap-offer .bsales-product-detail .target-product .bk-button-checkout .scn-product-button .scn-button-check.bk-button-inline {
+  color: #fff !important;
+  background: #ceb3aa !important;
+}
+
+#scn-bsales .bsales-v-offer #bsales-wrap-offer .bsales-product-detail .scn-offers-partial .scn-form .scn-bsales.scn-table .tbody .bk-product.tr .td.action .scn-addtocart {
+  color: #fff !important;
+  background: #ceb3aa !important;
+}
+
+.bsales_default .bkt--body .bkt--btn-payment {
+  color: #fff !important;
+  background: #ceb3aa !important;
+  border: 1px solid #ceb3aa !important;
+}
+
+.bsales_default .bkt--bsales-cart-total .money { color: #ceb3aa !important; }
+
+.bkt-cross-sell-widget .bkt-cross-sell-widget__price span.bkt-cross-sell-widget__total-price .money, .bkt-cross-sell-widget .bkt-cross-sell-widget__product .bkt-cross-sell-widget__choose-product .bkt-cross-sell-widget__price-product{ color: black !important;}
+
+.bkt-cross-sell-widget .bkt-cross-sell-widget__product .bkt-cross-sell-widget__choose-product .bkt-cross-sell-widget__name-product{ font-family: Palatino,"Palatino Linotype","Book Antiqua",serif;}

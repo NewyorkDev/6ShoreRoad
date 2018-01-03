@@ -1,0 +1,30 @@
+<style>
+.cs-announcmentblock {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+</style>
+
+{%if section.settings.showannbar == true %}
+
+  <div style="background-color:{{section.settings.annbarcolorbg}}; color:{{section.settings.annbarcolorbg}};  height: {{section.settings.annbarheight}};" class="cs-announcmentblock" style="" >
+    
+    {%if section.settings.annbarurl%}
+<a href="{{section.settings.annbarurl}}" style="color: {{section.settings.annbarcolor}}; text-decoration: none;" class="cs-announcementtext"> {{section.settings.annbartext}}</a>
+{%else%}
+<p href="#" style="color:{{section.settings.annbarcolor}}; text-decoration: none;" class="cs-announcementtext"> {{section.settings.annbartext}} </p>
+{%endif%}
+</div>
+  {%endif%}

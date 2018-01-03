@@ -1,0 +1,75 @@
+.button__cell { background: {{ shop.email_accent_color }}; }
+  a, a:hover, a:active, a:visited { color: {{ shop.email_accent_color }}; }
+
+  p,span {
+   font-size: 11px;
+   font-weight: bold;
+ 
+ }
+
+
+ .lines{
+  line-height:100%;
+ }
+
+
+
+  .aligncent{
+    text-align: center;
+ }
+
+
+ .linkinfo{
+ text-decoration: underline;
+ color: blue;
+ margin-top: 2px!important;
+ }
+ 
+ .nomargin{
+ margin-top: 2px!important;
+  }
+ .paddtd {
+   padding-left: 13%;
+}
+ 
+.nopad{
+   padding-bottom: 120px;
+   top: 0px;
+ }
+
+.totals{
+ font-size: 12px;
+ 
+ }
+
+
+.marg{
+  padding-top: 7px!important;
+}
+ 
+.alignright{
+  text-align: right;
+ }
+ .nonopad{
+  padding-bottom: 10px; 
+}
+.borders{
+    border-top: 2px solid #ceb3aa;
+    border-bottom: 2px solid #ceb3aa;
+     margin-top: 30px;
+     margin-bottom: 10px;
+     width: 100%;
+    text-align: right;
+  }  
+.items{
+     font-size: 13px;
+     font-weight: 640;
+     color: #ceb3aa;
+}
+.norad{
+     border-radius: no;
+}
+
+ .botpadd{
+   padding-bottom:  91px;
+}  
