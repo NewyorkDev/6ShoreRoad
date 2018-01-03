@@ -90,11 +90,13 @@
 }
 
 .cs-navmenu {
+	margin-top: 40px;
 	float: left !important;
 }
 
 .cs-navlink {
-	color: #ceb3aa;
+	/* color is now overriding components.css from its cs-navlink class */
+	color: #ceb3aa !important;
 	text-transform: uppercase;
 }
 
