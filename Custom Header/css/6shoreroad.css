@@ -162,9 +162,17 @@
 		-ms-flex-direction:     row;
 		flex-direction:         row;
 	}
+	
+	.hideOnMobile {
+		visibility: visible;
+	}
 }
 
-@media (max-width: 479px) {
+@media (max-width: 735px) {
+	.hideOnMobile {
+		visibility: hidden;
+	}
+	
 	.cs-content-area {
 		width:     100%;
 		min-width: 0;
