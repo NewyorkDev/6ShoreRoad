@@ -1157,7 +1157,7 @@ textarea.w-select {
 
 .w-dropdown-list {
 	position:   absolute;
-	background: #DDDDDD;
+	background: #f0f0f0;
 	display:    none;
 	min-width:  100%;
 }
@@ -1167,9 +1167,9 @@ textarea.w-select {
 }
 
 .w-dropdown-link {
-	padding: 2px 5px;
 	display: block;
-	color:   #222222;
+	color: #828282 !important;
+	padding: 10px 0px 10px 45px;
 }
 
 .w-dropdown-link.w--current {
@@ -1781,7 +1781,6 @@ textarea.w-select {
 	top:        100%;
 	left:       0;
 	right:      0;
-	background: #C8C8C8;
 	text-align: center;
 	overflow:   visible;
 	min-width:  200px;
