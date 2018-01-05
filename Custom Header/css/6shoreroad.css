@@ -62,7 +62,7 @@
 	background-position: 0 50%;
 	background-size:     16px;
 	background-repeat:   no-repeat;
-	color:               #000000;
+	color:               #000000 !important;
 	text-decoration:     none;
 }
 
@@ -164,7 +164,11 @@
 	}
 }
 
-@media (max-width: 479px) {
+@media (max-width: 735px) {
+	.hideOnMobile {
+		display: none;
+	}
+	
 	.cs-content-area {
 		width:     100%;
 		min-width: 0;
@@ -219,6 +223,8 @@
 		-ms-flex-align:          center;
 		align-items:             center;
 		border-left:             1px solid rgba(0, 0, 0, .11);
+		color:                   #000000 !important;
+		font-size:               18px !important;
 	}
 	
 	.cs-mobile-menu-button {
@@ -258,20 +264,21 @@
 		width:           100%;
 		padding-top:     10px;
 		padding-bottom:  10px;
-		border-bottom:   1px solid rgba(0, 0, 0, .55);
+		border-bottom:   1px solid rgba(0, 0, 0, 0.21);
 		color:           rgba(0, 0, 0, .55);
-		font-size:       13px;
+		font-size:       16px;
 		text-decoration: none;
 		text-transform:  uppercase;
 	}
 	
 	.cs-inner-mobile-links {
 		border-bottom:  1px solid rgba(0, 0, 0, .08);
-		font-size:      11px;
+		font-size:      16px;
 		text-transform: uppercase;
 	}
 }
 
+/*fontface*/
 @font-face {
 	font-family: 'Palatino';
 	src:         url('https://cdn.shopify.com/s/files/1/2516/2842/files/unicode.palatino_6febd11b-a000-4a0e-a2d8-d1a29e298422.ttf?14710484421821313084') format('truetype');
