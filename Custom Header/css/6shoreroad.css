@@ -62,7 +62,7 @@
 	background-position: 0 50%;
 	background-size:     16px;
 	background-repeat:   no-repeat;
-	color:               #000000;
+	color:               #000000 !important;
 	text-decoration:     none;
 }
 
@@ -162,15 +162,11 @@
 		-ms-flex-direction:     row;
 		flex-direction:         row;
 	}
-	
-	.hideOnMobile {
-		visibility: visible;
-	}
 }
 
 @media (max-width: 735px) {
 	.hideOnMobile {
-		visibility: hidden;
+		display: none;
 	}
 	
 	.cs-content-area {
